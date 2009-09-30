@@ -1,24 +1,31 @@
-set nocompatible
-set background=dark
+set nocompatible " vi compatibility is for losers
+set background=dark " dark is good
 syntax on
 filetype on
 filetype plugin on
 filetype plugin indent on
 colorscheme jellybeans
-set sw=2
-set ts=2
+set sw=2 " space width 2
+set ts=2 " tab width 2
 set binary noeol
-set number
-set matchpairs+=<:>
-set backspace=indent,eol,start
+set number " turns on line numbering
+set matchpairs+=<:> " adds matching on <> pairs
+set backspace=indent,eol,start " fixes the backspace key
 set ignorecase
 set expandtab
 set showcmd
-set hlsearch
-set autoindent
-set nostartofline
-set ruler
+set hlsearch " turns on highlight search
+set autoindent " turns on autoindent
+set nostartofline " alters default go to begining of line behavior
+set ruler " displays column numbers
 set confirm
+set clipboard+=unnamed " Yank to go to clipboard
+set backup " enable backup files
+set backupdir=~/.vimback " Vim swp directory
+set directory=~/.vimtemp " temp file directory
+set autowrite " Writes on make/shell commands
+set showmatch " show matching brackets
+set mat=5 " matching blinky
 
 source ~/.vim/abbreviations
 
@@ -27,12 +34,16 @@ imap uu _
 imap hh =>
 imap aa @
 
+" turn of highlight until next search
 nnoremap <C-L> :nohl<CR><C-L>
+" run ruby <current file> with F5
 map <F5> :!ruby %<CR>
+" refresh vimrc
 map <Leader>s :source $MYVIMRC<CR>
 map ,n :NERDTreeToggle<CR>
 map <S-Enter> 0<ESC>
 map <Enter> o<ESC>
+" refresh FuzzyFileFinder
 map <Leader>f :ruby finder.rescan!<CR>
 " MacVim keys
 map <D-q> :mksession! ~/.vim/.session<CR>
@@ -47,6 +58,7 @@ nmap <D-[> <<
 vmap <D-[> <<
 imap <D-[> <C-O><<
 
+" Syntastic
 let g:syntastic_enable_signs=1
 
 " FuzzyFinder
@@ -56,6 +68,7 @@ let g:fuzzy_ignore = &wildignore
 let g:fuzzy_matching_limit = 70
 let g:fuzzy_ceiling = 10000000000
 
+" Set wildcard behavior
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~,*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,*.ogg,*.mp3,*.mov
@@ -132,6 +145,3 @@ function! StatuslineTabWarning()
     endif
     return b:statusline_tab_warning
 endfunction
-
-set backupdir=~/.vimback
-set directory=~/.vimtemp
