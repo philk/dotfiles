@@ -1,0 +1,43 @@
+-----------------------------
+-- blue/green/purple theme --
+-----------------------------
+
+font          = sans 8
+
+bg_normal     = #3f3f3f
+bg_focus      = #3f3f3f
+bg_urgent     = #705050
+
+fg_normal     = #709080
+fg_focus      = #dfaf8f
+fg_urgent     = #3f3f3f
+
+border_width  = 1
+border_normal = #709080
+border_focus  = #dfaf8f
+border_marked = #705050
+
+taglist_squares_sel = /home/phil/.config/awesome/themes/zeb/taglist/squaree.png
+taglist_squares_unsel = /home/phil/.config/awesome/themes/zeb/taglist/squarec.png
+
+tasklist_floating_icon = /home/phil/.config/awesome/themes/zeb/tasklist/floatingw.png
+
+menu_submenu_icon = /home/phil/.config/awesome/themes/zeb/icons/submenu.png
+menu_height   = 15
+menu_width    = 100
+
+wallpaper_cmd = awsetbg -l
+
+layout_dwindle = /home/phil/.config/awesome/themes/zeb/layouts/dwindlew.png
+layout_fairh = /home/phil/.config/awesome/themes/zeb/layouts/fairhw.png
+layout_fairv = /home/phil/.config/awesome/themes/zeb/layouts/fairvw.png
+layout_floating = /home/phil/.config/awesome/themes/zeb/layouts/floatingw.png
+layout_magnifier = /home/phil/.config/awesome/themes/zeb/layouts/magnifierw.png
+layout_max = /home/phil/.config/awesome/themes/zeb/layouts/maxw.png
+layout_spiral = /home/phil/.config/awesome/themes/zeb/layouts/spiralw.png
+layout_tilebottom = /home/phil/.config/awesome/themes/zeb/layouts/tilebottomw.png
+layout_tileleft = /home/phil/.config/awesome/themes/zeb/layouts/tileleftw.png
+layout_tile = /home/phil/.config/awesome/themes/zeb/layouts/tilew.png
+layout_tiletop = /home/phil/.config/awesome/themes/zeb/layouts/tiletopw.png
+
+awesome_icon = /home/phil/.config/awesome/themes/zeb/icons/awesome16.png

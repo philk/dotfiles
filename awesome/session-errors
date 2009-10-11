@@ -1,0 +1,36 @@
+Xlib:  extension "RANDR" missing on display ":0.0".
+Xlib:  extension "RANDR" missing on display ":0.0".
+[26101:26101:222258234254:ERROR:/b/slave/chromium-rel-linux-64/build/src/chrome/browser/profile.cc(1083)] Not implemented reached in void ProfileImpl::CreatePasswordStore()
+Xlib:  extension "RANDR" missing on display ":0.0".
+Xlib:  extension "RANDR" missing on display ":0.0".
+Xlib:  extension "RANDR" missing on display ":0.1".
+Xlib:  extension "RANDR" missing on display ":0.1".
+[26101:26586:222513337353:ERROR:/b/slave/chromium-rel-linux-64/build/src/net/ocsp/nss_ocsp.cc(421)] data size too large: 65536 < 351360
+[26101:26104:222586618282:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(451)] pipe error (64): Connection reset by peer
+[26101:26104:222642765535:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 78: Broken pipe
+
+(chrome:26188): Gdk-WARNING **: XID collision, trouble ahead
+[26101:26104:222687548199:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(451)] pipe error (62): Connection reset by peer
+[26101:26104:222695595071:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(451)] pipe error (75): Connection reset by peer
+[26101:26104:222944152102:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(451)] pipe error (46): Connection reset by peer
+Xlib:  extension "RANDR" missing on display ":0.0".
+Xlib:  extension "RANDR" missing on display ":0.0".
+[26101:26104:223315359413:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(451)] pipe error (46): Connection reset by peer
+[26101:26104:223316040128:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 70: Broken pipe
+[26101:26104:223316040196:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 70: Broken pipe
+[26101:26104:223316040217:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 70: Broken pipe
+[26101:26104:223316040231:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 45: Broken pipe
+[26101:26104:223316040246:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 45: Broken pipe
+[26101:26104:223316040259:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 70: Broken pipe
+[26101:26104:223316040273:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 45: Broken pipe
+[26101:26104:223316040298:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 45: Broken pipe
+[26101:26104:223316040316:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 76: Broken pipe
+[26101:26104:223316040330:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 76: Broken pipe
+[26101:26104:223316040347:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 76: Broken pipe
+[26101:26104:223316040361:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 72: Broken pipe
+[26101:26104:223316040374:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 72: Broken pipe
+[26101:26104:223316040387:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 76: Broken pipe
+[26101:26104:223316040399:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(814)] pipe error on 72: Broken pipe
+[26101:26104:223316050248:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(451)] pipe error (80): Connection reset by peer
+[26101:26104:223316052809:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(451)] pipe error (27): Connection reset by peer
+[26101:26104:223316062157:ERROR:/b/slave/chromium-rel-linux-64/build/src/ipc/ipc_channel_posix.cc(451)] pipe error (68): Connection reset by peer
