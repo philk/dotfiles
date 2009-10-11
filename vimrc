@@ -78,11 +78,11 @@ if !has("gui")
     let g:CSApprox_loaded = 1
 else
     if has("gui_gnome")
-        set term=gnome-256color
-        colorscheme jellybeans
+"        set term=gnome-256color
+"        colorscheme jellybeans
     else
-        set t_Co=256
-        colorscheme jellybeans
+"        set t_Co=256
+"        colorscheme jellybeans
         set guitablabel=%M%t
 "        set lines=48
 "        set columns=120
