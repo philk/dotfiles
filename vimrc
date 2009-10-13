@@ -4,7 +4,6 @@ syntax on
 filetype on
 filetype plugin on
 filetype plugin indent on
-colorscheme jellybeans
 set sw=2 " space width 2
 set ts=2 " tab width 2
 set binary noeol
@@ -26,6 +25,18 @@ set directory=~/.vimtemp " temp file directory
 set autowrite " Writes on make/shell commands
 set showmatch " show matching brackets
 set mat=5 " matching blinky
+
+if $TERM =~ '^xterm.*'
+  set t_Co=256
+  colorscheme jellybeans
+elseif $TERM == 'linux'
+  set t_Co=16
+elseif $TERM == 'ansi'
+  set t_Co=16
+  colorscheme desert
+else
+  set t_Co=16
+endif
 
 source ~/.vim/abbreviations
 
@@ -75,17 +86,14 @@ set wildignore=*.o,*.obj,*~,*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,
 
 "dont load csapprox if we no gui support - silences an annoying warning
 if !has("gui")
-    let g:CSApprox_loaded = 1
+"    let g:CSApprox_loaded = 1    
 else
     if has("gui_gnome")
-"        set term=gnome-256color
-"        colorscheme jellybeans
+        set term=gnome-256color
+        colorscheme jellybeans
     else
-"        set t_Co=256
-"        colorscheme jellybeans
+        colorscheme jellybeans
         set guitablabel=%M%t
-"        set lines=48
-"        set columns=120
     endif
     if has("gui_mac") || has("gui_macvim")
         set guifont=Menlo:h13
@@ -118,7 +126,7 @@ endfunction
 
 " Statusline setup
 set statusline=%f
-"display a warning if &et is wrong, or we have mixed-indenting
+" display a warning if &et is wrong, or we have mixed-indenting
 set statusline+=%#error#
 set statusline+=%{StatuslineTabWarning()}
 set statusline+=%*
@@ -127,9 +135,9 @@ set statusline+=%#warningmsg# " for enabling syntastic
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-"return '[&et]' if &et is set wrong
-"return '[mixed-indenting]' if spaces and tabs are used to indent
-"return an empty string if everything is fine
+" return '[&et]' if &et is set wrong
+" return '[mixed-indenting]' if spaces and tabs are used to indent
+" return an empty string if everything is fine
 function! StatuslineTabWarning()
     if !exists("b:statusline_tab_warning")
         let tabs = search('^\t', 'nw') != 0
