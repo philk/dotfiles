@@ -44,3 +44,6 @@ export EDITOR="vim"
 export PAGER=less
 
 export PS1='\h:\w $(parse_git_branch)$ '
+# rvm-install added line:
+if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+
