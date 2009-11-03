@@ -23,6 +23,8 @@ shopt -s checkwinsize
 bind "set completion-ignore-case on"
 bind "set bell-style none"
 bind "set show-all-if-ambiguous on"
+shopt -s cdspell
+set visibile-stats on
 
 # Completion
 if [ -f /opt/local/etc/bash_completion ]; then

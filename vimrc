@@ -9,11 +9,13 @@ set ts=2 " tab width 2
 set binary noeol
 set number " turns on line numbering
 set matchpairs+=<:> " adds matching on <> pairs
+set comments=s1:/*,mb:*,ex:*/,f://,b:#,:%,:XCOMM,n:>,fb:-
 set backspace=indent,eol,start " fixes the backspace key
 set ignorecase
 set expandtab
 set showcmd
 set hlsearch " turns on highlight search
+set incsearch " incremental search
 set autoindent " turns on autoindent
 set nostartofline " alters default go to begining of line behavior
 set ruler " displays column numbers
@@ -25,10 +27,22 @@ set directory=~/.vimtemp " temp file directory
 set autowrite " Writes on make/shell commands
 set showmatch " show matching brackets
 set mat=5 " matching blinky
+set encoding=utf-8 " utf8 encoding
+set report=0
+set ls=2 " always show status line
+set cursorline " highlight cursor line
+set splitbelow splitright
+
+
+" Set wildcard behavior
+set wildmode=longest,list   "make cmdline tab completion similar to bash
+set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~,*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,*.ogg,*.mp3,*.mov
+
 
 if $TERM =~ '^xterm.*'
   set t_Co=256
-  colorscheme jellybeans
+  colorscheme moria
 elseif $TERM == 'linux'
   set t_Co=16
 elseif $TERM == 'ansi'
@@ -38,6 +52,13 @@ else
   set t_Co=16
 endif
 
+" when using list, keep tabs at their full width and display `arrows':
+" (Character 187 is a right double-chevron, and 183 a mid-dot.)
+execute 'set listchars+=tab:' . nr2char(187) . nr2char(183)
+"check if file is written to elsewhere and ask to reload immediately, not when
+"saving
+au CursorHold * checktime
+
 source ~/.vim/abbreviations
 
 imap jj <Esc>
@@ -46,7 +67,7 @@ imap hh =>
 imap aa @
 
 " turn of highlight until next search
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <C-S> :nohl<CR><C-S>
 " run ruby <current file> with F5
 map <F5> :!ruby %<CR>
 " refresh vimrc
@@ -68,6 +89,25 @@ imap <D-]> <C-O>>>
 nmap <D-[> <<
 vmap <D-[> <<
 imap <D-[> <C-O><<
+" Help keys
+nnoremap <F1> :help<Space>
+vmap <F1> <C-C><F1>
+omap <F1> <C-C><F1>
+map! <F1> <C-C><F1>
+" Cycle through buffers
+nnoremap <C-N> :bn<CR>
+nnoremap <C-P> :bp<CR>
+"move around windows with ctrl key!
+map <C-H> <C-W>h
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+"replace all tabs with 4 spaces
+map <Leader>t :retab 2<CR> 
+
+" NERDTree
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyo$', '\.pyc$', '\.svn[\//]$', '\.swp$']
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 
 " Syntastic
 let g:syntastic_enable_signs=1
@@ -77,12 +117,7 @@ map ,f :FuzzyFinderTextMate<CR>
 map ,b :FuzzyFinderBuffer<CR>
 let g:fuzzy_ignore = &wildignore
 let g:fuzzy_matching_limit = 70
-let g:fuzzy_ceiling = 10000000000
-
-" Set wildcard behavior
-set wildmode=list:longest   "make cmdline tab completion similar to bash
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~,*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,*.ogg,*.mp3,*.mov
+let g:fuzzy_ceiling = 50000
 
 "dont load csapprox if we no gui support - silences an annoying warning
 if !has("gui")
@@ -90,9 +125,9 @@ if !has("gui")
 else
     if has("gui_gnome")
         set term=gnome-256color
-        colorscheme jellybeans
+        colorscheme moria
     else
-        colorscheme jellybeans
+        colorscheme moria
         set guitablabel=%M%t
     endif
     if has("gui_mac") || has("gui_macvim")
@@ -100,7 +135,7 @@ else
     endif
     if has("gui_win32") || has("gui_win32s")
         set guifont=Consolas:h12
-				set enc=utf-8
+        set enc=utf-8
     endif
 endif
 
@@ -125,7 +160,15 @@ function! s:SetupSnippets()
 endfunction
 
 " Statusline setup
-set statusline=%f
+set statusline=%f\ 
+set statusline+=%h%m%r%w
+set statusline+=[%{strlen(&ft)?&ft:'none'},
+set statusline+=%{strlen(&fenc)?&fenc:&enc},
+set statusline+=%{&fileformat}]
+set statusline+=%=
+set statusline+=%b,0x%-8B\ 
+set statusline+=%c,%l/
+set statusline+=%L\ %P
 " display a warning if &et is wrong, or we have mixed-indenting
 set statusline+=%#error#
 set statusline+=%{StatuslineTabWarning()}
@@ -135,6 +178,8 @@ set statusline+=%#warningmsg# " for enabling syntastic
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Recalculate tab warning when idle and after save
+autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
 " return '[&et]' if &et is set wrong
 " return '[mixed-indenting]' if spaces and tabs are used to indent
 " return an empty string if everything is fine
