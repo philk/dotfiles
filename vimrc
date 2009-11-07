@@ -139,6 +139,16 @@ else
     endif
 endif
 
+" Specky setup
+let g:speckyBannerKey = "<C-S>b"
+let g:speckyQuoteSwitcherKey = "<C-S>'"
+let g:speckyRunRdocKey = "<C-S>r"
+let g:speckySpecSwitcherKey = "<C-S>x"
+let g:speckyRunSpecKey = "<C-S>s"
+let g:speckyRunSpecCmd = "spec -fs"
+let g:speckyRunRdocCmd = "fri -L -f plain"
+let g:speckyWindowType = 2
+
 "snipmate setup
 try
   source ~/.vim/support_functions.vim

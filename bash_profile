@@ -21,6 +21,3 @@ export RUBYPATH="/opt/local/bin/ruby"
 alias vim="mvim"
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
 
-# rvm-install added line:
-if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
-
