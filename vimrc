@@ -11,7 +11,8 @@ set number " turns on line numbering
 set matchpairs+=<:> " adds matching on <> pairs
 set comments=s1:/*,mb:*,ex:*/,f://,b:#,:%,:XCOMM,n:>,fb:-
 set backspace=indent,eol,start " fixes the backspace key
-set ignorecase
+set ignorecase " ignore case during search
+set smartcase " (unless caps)
 set expandtab
 set showcmd
 set hlsearch " turns on highlight search
@@ -28,7 +29,7 @@ set autowrite " Writes on make/shell commands
 set showmatch " show matching brackets
 set mat=5 " matching blinky
 set encoding=utf-8 " utf8 encoding
-set report=0
+set report=0 " show a report when N lines were changed.  0 means 'all'
 set ls=2 " always show status line
 set cursorline " highlight cursor line
 set splitbelow splitright
@@ -39,6 +40,9 @@ set wildmode=longest,list   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~,*.pyc,*.zip,*.gz,*.bz,*.tar,*.jpg,*.png,*.gif,*.avi,*.wmv,*.ogg,*.mp3,*.mov
 
+autocmd FileType mkd set formatoptions=tcroqn2 comments=n:>
+autocmd FileType mkd set spell
+autocmd FileType c,cpp,java,javascript,python,xml,xhtml,html set shiftwidth=4
 
 if $TERM =~ '^xterm.*'
   set t_Co=256
@@ -125,6 +129,7 @@ if !has("gui")
 else
     if has("gui_gnome")
         set term=gnome-256color
+        let moria_style = 'black'
         colorscheme moria
     else
         colorscheme moria
@@ -207,4 +212,30 @@ function! StatuslineTabWarning()
         endif
     endif
     return b:statusline_tab_warning
+endfunction
+
+" Mainly for Markdown in text highlighting
+function! TextEnableCodeSnip(filetype,start,end,textSnipHl) abort
+  let ft=toupper(a:filetype)
+  let group='textGroup'.ft
+  if exists('b:current_syntax')
+    let s:current_syntax=b:current_syntax
+    " Remove current syntax definition, as some syntax files (e.g. cpp.vim)
+    " do nothing if b:current_syntax is defined.
+    unlet b:current_syntax
+  endif
+  execute 'syntax include @'.group.' syntax/'.a:filetype.'.vim'
+  try
+    execute 'syntax include @'.group.' after/syntax/'.a:filetype.'.vim'
+  catch
+  endtry
+  if exists('s:current_syntax')
+    let b:current_syntax=s:current_syntax
+  else
+    unlet b:current_syntax
+  endif
+  execute 'syntax region textSnip'.ft.'
+  \ matchgroup='.a:textSnipHl.'
+  \ start="'.a:start.'" end="'.a:end.'"
+  \ contains=@'.group
 endfunction
