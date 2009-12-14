@@ -49,3 +49,7 @@ export PS1='\h:\w $(parse_git_branch)$ '
 # rvm-install added line:
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
+
+# rvm-install added line:
+if [[ -s /Users/phil/.rvm/scripts/rvm ]] && [[ $rvm_loaded_flag != 1 ]] ; then source /Users/phil/.rvm/scripts/rvm ; fi
+

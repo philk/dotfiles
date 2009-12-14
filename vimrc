@@ -109,6 +109,9 @@ map <C-L> <C-W>l
 "replace all tabs with 4 spaces
 map <Leader>t :retab 2<CR> 
 
+" Erlang
+let g:erlangFold=0
+
 " NERDTree
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyo$', '\.pyc$', '\.svn[\//]$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
