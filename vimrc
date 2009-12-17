@@ -139,7 +139,7 @@ else
         set guitablabel=%M%t
     endif
     if has("gui_mac") || has("gui_macvim")
-        set guifont=Menlo:h13
+        set guifont=PanicSans:h13
     endif
     if has("gui_win32") || has("gui_win32s")
         set guifont=Consolas:h12
