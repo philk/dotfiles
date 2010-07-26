@@ -27,11 +27,15 @@ shopt -s cdspell
 set visibile-stats on
 
 # Completion
-if [ -f /opt/local/etc/bash_completion ]; then
-  . /opt/local/etc/bash_completion
-elif [ -f /etc/bash_completion ]; then
-  . /etc/bash_completion
+# if [ -f /opt/local/etc/bash_completion ]; then
+#   . /opt/local/etc/bash_completion
+# elif [ -f /etc/bash_completion ]; then
+#   . /etc/bash_completion
+# fi
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
 fi
+
 source ~/bin/git-completion.bash
 
 # Alias
@@ -46,10 +50,11 @@ export EDITOR="vim"
 export PAGER=less
 
 export PS1='\h:\w $(parse_git_branch)$ '
+
 # rvm-install added line:
-if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+# if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
 
 # rvm-install added line:
-if [[ -s /Users/phil/.rvm/scripts/rvm ]] && [[ $rvm_loaded_flag != 1 ]] ; then source /Users/phil/.rvm/scripts/rvm ; fi
+# if [[ -s /Users/phil/.rvm/scripts/rvm ]] && [[ $rvm_loaded_flag != 1 ]] ; then source /Users/phil/.rvm/scripts/rvm ; fi
 
