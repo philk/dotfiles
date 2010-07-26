@@ -18,12 +18,19 @@ source $ZSH/oh-my-zsh.sh
 PATH="/Users/phil/bin:${PATH}"
 PATH="/Users/phil/Source/depot_tools:${PATH}"
 PATH="/usr/local/bin:${PATH}"
+PATH="/Users/phil/.cabal/bin:${PATH}"
 
 export RUBYOPT="rubygems"
+export RUBYLIB="/usr/local/lib:$RUBYLIB"
+
 # export GEM_HOME="/opt/local/lib/ruby/gems/1.8"
 # export RUBYLIB="/opt/local/lib/ruby"
 # export TM_RUBY="/opt/local/bin/ruby"
 # export RUBYPATH="/opt/local/bin/ruby"
+
+export GOROOT=`brew --prefix`/Cellar/go/HEAD
+export GOARCH=amd64
+export GOOS=darwin
 
 # ALIAS
 alias vim="mvim"
@@ -34,5 +41,4 @@ export EDITOR="vim"
 export PAGER=less
 
 # rvm-install added line:
-if [[ -s /Users/phil/.rvm/scripts/rvm ]] && [[ $rvm_loaded_flag != 1 ]] ; then source /Users/phil/.rvm/scripts/rvm ; fi
-
+if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
