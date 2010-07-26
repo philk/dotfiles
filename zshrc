@@ -15,14 +15,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-# PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
-# PATH="/opt/local/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 PATH="/Users/phil/bin:${PATH}"
 PATH="/Users/phil/Source/depot_tools:${PATH}"
 PATH="/usr/local/bin:${PATH}"
-
-# MANPATH="/opt/local/share/man:${MANPATH}"
-# export MANPATH
 
 export RUBYOPT="rubygems"
 # export GEM_HOME="/opt/local/lib/ruby/gems/1.8"
