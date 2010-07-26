@@ -1,4 +1,5 @@
 # Path to your oh-my-zsh configuration.
+fpath=(/usr/local/share/zsh/functions)
 export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
@@ -15,6 +16,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+# Pathing
 PATH="/Users/phil/bin:${PATH}"
 PATH="/Users/phil/Source/depot_tools:${PATH}"
 PATH="/usr/local/bin:${PATH}"
