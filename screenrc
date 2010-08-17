@@ -5,7 +5,7 @@ defscrollback 10000               # change default scrollback value for new wind
 nonblock on                       # don't block everything, waiting for an unresponsive window
 bufferfile $HOME/.screenex        # the file to use for "readbuf" ('<') and  "writebuf" ('>'):
 shell -$SHELL                     # make the shell in every window a login shell
-deflogin on                       # log new screen windows in utmp
+# deflogin on                       # log new screen windows in utmp
 sorendition Wk                    # status: normal text on black bg
                                   # [ hostname ][(0*$ zsh) (1-$ emacs)][ hostname ]
 hardstatus alwayslastline "%{G}[ %{Y}%H %{G}][%{w}%?%-Lw%?%{G}(%{W}%n*%f %t%?(%u)%?%{G})%{w}%?%+Lw%?%?%= %{G}][%{Y} %H %{G}]"
