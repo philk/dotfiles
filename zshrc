@@ -19,7 +19,7 @@ source $ZSH/oh-my-zsh.sh
 # Pathing
 PATH="/Users/phil/bin:${PATH}"
 PATH="/Users/phil/Source/depot_tools:${PATH}"
-PATH="/usr/local/bin:${PATH}"
+PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 PATH="/Users/phil/.cabal/bin:${PATH}"
 PATH="/usr/local/share/npm/bin:${PATH}"
 
