@@ -7,5 +7,9 @@ bufferfile $HOME/.screenex        # the file to use for "readbuf" ('<') and  "wr
 shell -$SHELL                     # make the shell in every window a login shell
 # deflogin on                       # log new screen windows in utmp
 sorendition Wk                    # status: normal text on black bg
+
+# TERMCAP
+termcapinfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
                                   # [ hostname ][(0*$ zsh) (1-$ emacs)][ hostname ]
 hardstatus alwayslastline "%{G}[ %{Y}%H %{G}][%{w}%?%-Lw%?%{G}(%{W}%n*%f %t%?(%u)%?%{G})%{w}%?%+Lw%?%?%= %{G}][%{Y} %H %{G}]"
