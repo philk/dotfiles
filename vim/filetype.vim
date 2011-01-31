@@ -1,12 +1,13 @@
-" markdown filetype file
-"
-if exists("did\_load\_filetypes")
-  finish
-endif
+" markdown
 augroup markdown
   au! BufRead,BufNewFile *.mkd   setfiletype mkd
   au! BufRead,BufNewFile *.markdown setfiletype mkd
+  au! BufRead,BufNewFile *.md   setfiletype mkd
 augroup END
+
+" mustache
+runtime! ftdetect/*.vim
+au BufNewFile,BufRead *.mustache  setf mustache
 
 " HAML
 au! BufRead,BufNewFile *.haml setfiletype haml
@@ -14,13 +15,4 @@ au! BufRead,BufNewFile *.haml setfiletype haml
 " tmux config
 augroup filetypedetect
   au! BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
-augroup END
-
-" Haskell
-au BufEnter *.hs compiler ghc
-
-" RailsConfig
-augroup railstoolkit
-  autocmd!
-  autocmd FileType ruby,yaml,haml,sass set autoindent shiftwidth=2 softtabstop=2 expandtab number smarttab incsearch
 augroup END

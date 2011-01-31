@@ -25,8 +25,8 @@ PATH="/Users/phil/.cabal/bin:${PATH}"
 PATH="/usr/local/share/npm/bin:${PATH}"
 # PATH="/usr/local/Cellar/python/2.7.1/bin:${PATH}"
 
-export RUBYOPT="rubygems"
-export RUBYLIB="/usr/local/lib:$RUBYLIB"
+# export RUBYOPT="rubygems"
+# export RUBYLIB="/usr/local/lib:$RUBYLIB"
 
 # export GEM_HOME="/opt/local/lib/ruby/gems/1.8"
 # export RUBYLIB="/opt/local/lib/ruby"
@@ -61,8 +61,8 @@ alias ql="qlmanage -p 2>/dev/null" # preview a file using QuickLook
 alias knife="nocorrect knife"
 
 # Program Setup
-export GIT_EDITOR="vim"
-export EDITOR="vim"
+export GIT_EDITOR="mvim -f"
+export EDITOR="mvim -f"
 export PAGER=less
 
 # rvm-install added line:

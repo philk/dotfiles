@@ -1,11 +1,13 @@
 require "pp"
 puts "pp loaded"
 
-begin
-  require 'what_methods'
-  puts "what_methods loaded"
-rescue LoadError
-  puts "missing what_methods"
+%w{what_methods hirb ori}.each do |g|
+  begin
+    require g
+    puts "#{g} loaded"
+  rescue LoadError => e
+    puts "#{g} missing"
+  end
 end
 
 begin
@@ -14,23 +16,7 @@ begin
   Wirble.colorize
   puts "wirble loaded"
 rescue LoadError
-  puts "missing wirble"
-end
-
-begin
-  require "hirb"
-  Hirb.enable
-  puts "hirb loaded"
-rescue LoadError
-  puts "missing hirb"
-end
-
-begin
-  require "ori"
-  ORI.conf.color = true
-  puts "ori loaded"
-rescue LoadError
-  puts "missing ori"
+  puts "wirble missing"
 end
 
 IRB.conf[:AUTO_INDENT] = true
@@ -57,5 +43,14 @@ IRB.conf[:PROMPT_MODE] = :SIMPLE
 #     puts `ri '#{method}'`
 #   end
 # end
+
+# require 'irb/ext/save-history'
+# puts "save-history loaded"
+# IRB.conf[:SAVE_HISTORY] = 1000
+# IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
+
+def local_methods(obj=self)
+  (obj.methods - obj.class.superclass.instance_methods).sort
+end
 
 puts ".irbrc successfully loaded"
