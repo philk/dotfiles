@@ -7,5 +7,37 @@ bufferfile $HOME/.screenex        # the file to use for "readbuf" ('<') and  "wr
 shell -$SHELL                     # make the shell in every window a login shell
 # deflogin on                       # log new screen windows in utmp
 sorendition Wk                    # status: normal text on black bg
-                                  # [ hostname ][(0*$ zsh) (1-$ emacs)][ hostname ]
-hardstatus alwayslastline "%{G}[ %{Y}%H %{G}][%{w}%?%-Lw%?%{G}(%{W}%n*%f %t%?(%u)%?%{G})%{w}%?%+Lw%?%?%= %{G}][%{Y} %H %{G}]"
+defmonitor on
+activity ""
+
+# TERMCAP
+termcapinfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
+# KEYBINDINGS
+register t "^aA^aa^k^h"
+register r "^a:source $HOME/.screenrc^M"
+bindkey -k k2 screen
+bindkey -k k3 prev
+bindkey -k k4 next
+bindkey -k k5 eval 'fit' 'process r'			# F5  | Reload profile
+bindkey -k k6 detach					# F6  | Detach from this session
+bindkey -k k7 copy					# F7  | Enter copy/scrollback mode
+bindkey -k k8 process t
+
+# Backticks
+backtick 106 	2	2		byobu-status load_average
+backtick 107 13 13 byobu-status mem_used
+backtick 117 3 3 byobu-status network
+backtick 120 	9999999	9999999		byobu-status date
+backtick 121 	9999999	9999999		byobu-status time
+backtick 123 	13	13		byobu-status disk
+backtick 124 	9999999	9999999		true
+backtick 133 	3	3		byobu-status disk_io
+
+# Window tabs, second to last line
+caption always "%12`%?%-Lw%50L>%?%{=r}%n*%f %t%?(%u)%?%{-}%12`%?%+Lw%?%11` %=%12`%110`%109`%122`%111`%10`%<"
+# [ hostname ][ net ][ mem ][ load ][ disk ][ date time ]
+hardstatus alwayslastline "%{G}[ %{Y}%H %{G}][%{Y} net:%117`%{G}][%{Y} mem:%107`%{G}][%{Y} load:%106`%{G}][%{Y}disk:%133`%{G}]%=[%{Y} %120`%121` %{G}]"
+
+# old line for reference
+# hardstatus alwayslastline "%{G}[ %{Y}%H %{G}][%{w}%?%-Lw%?%{G}(%{W}%n*%f %t%?(%u)%?%{G})%{w}%?%+Lw%?%?%= %{G}][%{Y} %H %{G}]"
