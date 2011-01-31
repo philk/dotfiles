@@ -23,8 +23,8 @@ PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 PATH="/Users/phil/.cabal/bin:${PATH}"
 PATH="/usr/local/share/npm/bin:${PATH}"
 
-export RUBYOPT="rubygems"
-export RUBYLIB="/usr/local/lib:$RUBYLIB"
+# export RUBYOPT="rubygems"
+# export RUBYLIB="/usr/local/lib:$RUBYLIB"
 
 # export GEM_HOME="/opt/local/lib/ruby/gems/1.8"
 # export RUBYLIB="/opt/local/lib/ruby"
@@ -37,7 +37,7 @@ export GOOS=darwin
 
 # EC2
 export EC2_CERT=${HOME}/.ec2/cert-leapfile.pem
-export EC2_HOME=/usr/local/Cellar/ec2-api-tools/1.3-51254/jars
+export EC2_HOME=/usr/local/Cellar/ec2-api-tools/1.3-53907/jars
 export EC2_PRIVATE_KEY=${HOME}/.ec2/pk-leapfile.pem
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
 
@@ -49,8 +49,8 @@ alias flush="dscacheutil -flushcache" # Flush DNS cache
 alias ql="qlmanage -p 2>/dev/null" # preview a file using QuickLook
 
 # Program Setup
-export GIT_EDITOR="vim"
-export EDITOR="vim"
+export GIT_EDITOR="mvim -f"
+export EDITOR="mvim -f"
 export PAGER=less
 
 # rvm-install added line:
