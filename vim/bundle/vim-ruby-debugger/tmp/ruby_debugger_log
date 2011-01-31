@@ -1,0 +1,4 @@
+Vim plugin, 00:29:15: Set breakpoint to: /Users/phil/Dropbox/Development/Ruby/shorturl/app/controllers/url.rb:19
+Vim plugin, 00:29:32: Debugger is successfully started
+Vim plugin, 00:29:49: Killed server with pid: 26753
+Vim plugin, 00:29:49: Killed server with pid: 26756
