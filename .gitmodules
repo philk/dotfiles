@@ -32,9 +32,6 @@
 [submodule "vim/bundle/vim-supertab"]
   path = vim/bundle/vim-supertab
   url = git://github.com/tsaleh/vim-supertab.git
-[submodule "vim/bundle/vim-surround"]
-  path = vim/bundle/vim-surround
-  url = git://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/vim-tcomment"]
   path = vim/bundle/vim-tcomment
   url = https://github.com/tsaleh/vim-tcomment.git
