@@ -57,6 +57,10 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias flush="dscacheutil -flushcache" # Flush DNS cache
 alias ql="qlmanage -p 2>/dev/null" # preview a file using QuickLook
 
+# Chef Aliases
+alias kcu="knife cookbook upload $1"
+alias kcc="knife cookbook create $1"
+
 # Corrections fixes
 alias knife="nocorrect knife"
 
