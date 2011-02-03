@@ -87,6 +87,7 @@ imap jj <Esc>
 imap uu _
 imap hh =>
 imap aa @
+let mapleader = ","
 
 " turn of highlight until next search
 nnoremap <C-S> :nohl<CR><C-S>
@@ -96,18 +97,8 @@ map <Leader>s :source $MYVIMRC<CR>
 map <S-Enter> 0<ESC>
 map <Enter> o<ESC>
 
-" MacVim keys
-map <D-q> :mksession! ~/.vim/.session<CR>
-map <D-w> :tabclose<CR>
-map <D-t> :tabnew<CR>
-map <D-}> :tabn<CR>
-map <D-}> :tabp<CR>
-nmap <D-]> >>
-vmap <D-]> >>
-imap <D-]> <C-O>>>
-nmap <D-[> <<
-vmap <D-[> <<
-imap <D-[> <C-O><<
+" Command-T
+map <Leader>a :CommandT<CR>
 
 " Cycle through buffers
 nnoremap <C-N> :bn<CR>
@@ -118,7 +109,7 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 "replace all tabs with 2 spaces
-map <Leader>t :retab 2<CR> 
+map <Leader>r :retab 2<CR> 
 
 " NERDTree
 map ,n :NERDTreeToggle<CR>
