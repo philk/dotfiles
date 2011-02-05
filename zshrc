@@ -48,7 +48,7 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
 export AWS_RDS_HOME="/usr/local/Cellar/rds-command-line-tools/1.3.003/jars"
 export AWS_CLOUDWATCH_HOME="/usr/local/Cellar/cloud-watch/1.0.9.3/jars"
 export SERVICE_HOME="$AWS_CLOUDWATCH_HOME"
-export AWS_ELB_HOME="/usr/local/Cellar/elb-tools/1.0.10.0/jars"
+export AWS_ELB_HOME="/usr/local/Cellar/elb-tools/1.0.11.0/jars"
 
 # ALIAS
 alias vim="mvim"
