@@ -8,8 +8,8 @@ syntax on
 filetype on
 filetype plugin on
 filetype plugin indent on
-set sw=2 " space width 2
-set ts=2 " tab width 2
+set shiftwidth=2 " space width 2
+set tabstop=2 " tab width 2
 set binary noeol
 set number " turns on line numbering
 set matchpairs+=<:> " adds matching on <> pairs
@@ -59,9 +59,9 @@ else
     if has("gui_gnome")
         set term=gnome-256color
         let moria_style = 'black'
-        colorscheme moria
+        colorscheme solarized
     else
-        colorscheme moria
+        colorscheme solarized
         set guitablabel=%M%t
     endif
     if has("gui_mac") || has("gui_macvim")

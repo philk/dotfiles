@@ -18,12 +18,14 @@ source $ZSH/oh-my-zsh.sh
 
 echo "Pathing"
 # Pathing
-PATH="/Users/phil/bin:${PATH}"
-PATH="/Users/phil/Source/depot_tools:${PATH}"
+PATH="${HOME}/bin:${PATH}"
+PATH="${HOME}/Source/depot_tools:${PATH}"
 PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
-PATH="/Users/phil/.cabal/bin:${PATH}"
+PATH="${HOME}/.cabal/bin:${PATH}"
 PATH="/usr/local/share/npm/bin:${PATH}"
 # PATH="/usr/local/Cellar/python/2.7.1/bin:${PATH}"
+
+export GNUPGHOME="${HOME}/.gnupg"
 
 # export RUBYOPT="rubygems"
 # export RUBYLIB="/usr/local/lib:$RUBYLIB"
@@ -33,9 +35,18 @@ PATH="/usr/local/share/npm/bin:${PATH}"
 # export TM_RUBY="/opt/local/bin/ruby"
 # export RUBYPATH="/opt/local/bin/ruby"
 
+# Go
 export GOROOT=`brew --prefix`/Cellar/go/HEAD
 export GOARCH=amd64
 export GOOS=darwin
+
+# Python
+export ARCHFLAGS="-arch i386 -arch x86_64"
+export PIP_USE_MIRRORS=true
+export WORKON_HOME=${HOME}/.venvs
+export PIP_VIRTUALENV_BASE=${WORKON_HOME}
+export PIP_RESPECT_VIRTUALENV=true
+source /usr/local/bin/virtualenvwrapper.sh
 
 # Node
 export NODE_PATH="/usr/local/lib/node"
@@ -71,3 +82,5 @@ export PAGER=less
 
 # rvm-install added line:
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+
+RPROMPT="\$(~/.rvm/bin/rvm-prompt)"
