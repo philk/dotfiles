@@ -11,6 +11,7 @@ export ZSH_THEME="gallifrey"
 
 # Comment this out to disable weekly auto-update checks
 # export DISABLE_AUTO_UPDATE="false"
+plugins=(git ruby brew)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,4 +84,4 @@ export PAGER=less
 # rvm-install added line:
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
-RPROMPT="\$(~/.rvm/bin/rvm-prompt)"
+RPS1="$RPS1 \$(~/.rvm/bin/rvm-prompt)"
