@@ -168,3 +168,8 @@ endif
 " let g:ruby_debugger_debug_mode = 1
 let g:ruby_debugger_progname = 'mvim'
 let g:ruby_debugger_builtin_sender = 0
+
+" JSON tidy'er
+" install with: cpan JSON::XS
+" http://visibletrap.blogspot.com/2010/05/vim-how-to-format-and-syntax-highlight.html
+map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
