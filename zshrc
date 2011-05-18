@@ -11,7 +11,7 @@ export ZSH_THEME="gallifrey"
 
 # Comment this out to disable weekly auto-update checks
 # export DISABLE_AUTO_UPDATE="false"
-plugins=(git ruby brew)
+plugins=(git ruby gem brew)
 
 source $ZSH/oh-my-zsh.sh
 
