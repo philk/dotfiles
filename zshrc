@@ -87,4 +87,12 @@ export PAGER=less
 # rvm-install added line:
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
+# z
+if (( $+commands[brew] )) ; then
+  . `brew --prefix`/etc/profile.d/z.sh
+  function precmd () {
+    z --add "$(pwd -P)"
+  }
+fi
+
 RPS1="$RPS1 \$(~/.rvm/bin/rvm-prompt)"
