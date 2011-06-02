@@ -94,7 +94,8 @@ fi
 if (( $+commands[brew] )) ; then
   . `brew --prefix`/etc/profile.d/z.sh
   function precmd () {
-    z --add "$(pwd -P)"
+    z --add "$(pwd -P)";
+    title $ZSH_THEME_TERM_TAB_TITLE_IDLE $ZSH_THEME_TERM_TITLE_IDLE;
   }
 fi
 
