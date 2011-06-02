@@ -68,6 +68,9 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias flush="dscacheutil -flushcache" # Flush DNS cache
 alias ql="qlmanage -p 2>/dev/null" # preview a file using QuickLook
+getip() {
+  dig +short $1 | pbcopy
+}
 
 # Chef Aliases
 alias kcu="knife cookbook upload $1"
