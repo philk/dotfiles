@@ -85,7 +85,10 @@ export EDITOR="mvim -f"
 export PAGER=less
 
 # rvm-install added line:
-if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+if [ -s ~/.rvm/scripts/rvm ] ; then
+  RPS1="$RPS1 \$(~/.rvm/bin/rvm-prompt)"
+  source ~/.rvm/scripts/rvm
+fi
 
 # z
 if (( $+commands[brew] )) ; then
@@ -95,4 +98,3 @@ if (( $+commands[brew] )) ; then
   }
 fi
 
-RPS1="$RPS1 \$(~/.rvm/bin/rvm-prompt)"
