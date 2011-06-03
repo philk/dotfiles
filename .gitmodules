@@ -54,3 +54,6 @@
 	path = vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
   ignore = untracked
+[submodule "vim/bundle/gitv"]
+	path = vim/bundle/gitv
+	url = git://github.com/gregsexton/gitv.git
