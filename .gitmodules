@@ -57,3 +57,6 @@
 [submodule "vim/bundle/gitv"]
 	path = vim/bundle/gitv
 	url = git://github.com/gregsexton/gitv.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git

@@ -173,3 +173,7 @@ let g:ruby_debugger_builtin_sender = 0
 " install with: cpan JSON::XS
 " http://visibletrap.blogspot.com/2010/05/vim-how-to-format-and-syntax-highlight.html
 map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
+
+" Markdown preview
+imap <leader>p <ESC>:w!<CR>:!markdown % > %.html && open %.html<CR><CR>a
+map  <leader>p <ESC>:w!<CR>:!markdown % > %.html && open %.html<CR><CR>a
