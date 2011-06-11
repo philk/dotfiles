@@ -177,3 +177,10 @@ map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
 " Markdown preview
 imap <leader>p <ESC>:w!<CR>:!markdown % > %.html && open %.html<CR><CR>a
 map  <leader>p <ESC>:w!<CR>:!markdown % > %.html && open %.html<CR><CR>a
+
+" Chef switcher
+au BufNewFile,BufRead */cookbooks/*  call s:SetupChef()
+function! s:SetupChef()
+    nnoremap <buffer> <silent> <C-w><C-w>    :<C-u>ChefDoWhatIMean<CR>
+    nnoremap <buffer> <silent> <C-w><C-f>    :<C-u>ChefDoWhatIMeanSplit<CR>
+endfunction
