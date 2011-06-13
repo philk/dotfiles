@@ -17,24 +17,15 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-echo "Pathing"
 # Pathing
+PATH="/usr/local/share/python:${PATH}"
 PATH="${HOME}/bin:${PATH}"
 PATH="${HOME}/Source/depot_tools:${PATH}"
-PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 PATH="${HOME}/.cabal/bin:${PATH}"
 PATH="/usr/local/share/npm/bin:${PATH}"
-# PATH="/usr/local/Cellar/python/2.7.1/bin:${PATH}"
+PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
 export GNUPGHOME="${HOME}/.gnupg"
-
-# export RUBYOPT="rubygems"
-# export RUBYLIB="/usr/local/lib:$RUBYLIB"
-
-# export GEM_HOME="/opt/local/lib/ruby/gems/1.8"
-# export RUBYLIB="/opt/local/lib/ruby"
-# export TM_RUBY="/opt/local/bin/ruby"
-# export RUBYPATH="/opt/local/bin/ruby"
 
 # Go
 export GOROOT=`brew --prefix`/Cellar/go/HEAD
@@ -47,20 +38,14 @@ export PIP_USE_MIRRORS=true
 export WORKON_HOME=${HOME}/.venvs
 export PIP_VIRTUALENV_BASE=${WORKON_HOME}
 export PIP_RESPECT_VIRTUALENV=true
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -f /usr/local/share/python/virtualenvwrapper.sh ]; then
+  source /usr/local/share/python/virtualenvwrapper.sh
+else
+  source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 # Node
 export NODE_PATH="/usr/local/lib/node"
-
-# EC2
-export EC2_CERT=${HOME}/.ec2/cert-leapfile.pem
-export EC2_PRIVATE_KEY=${HOME}/.ec2/pk-leapfile.pem
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
-export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.3-62308/jars"
-export AWS_RDS_HOME="/usr/local/Cellar/rds-command-line-tools/1.3.003/jars"
-export AWS_CLOUDWATCH_HOME="/usr/local/Cellar/cloud-watch/1.0.9.3/jars"
-export SERVICE_HOME="$AWS_CLOUDWATCH_HOME"
-export AWS_ELB_HOME="/usr/local/Cellar/elb-tools/1.0.11.0/jars"
 
 # ALIAS
 alias vim="mvim"
