@@ -71,8 +71,8 @@ export PAGER=less
 
 # rvm-install added line:
 if [ -s ~/.rvm/scripts/rvm ] ; then
-  RPS1="$RPS1 \$(~/.rvm/bin/rvm-prompt)"
   source ~/.rvm/scripts/rvm
+  RPS1="$RPS1 \$(rvm-prompt)"
 fi
 
 # z
