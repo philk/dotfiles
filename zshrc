@@ -9,6 +9,9 @@ export ZSH_THEME="gallifrey"
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+COMPLETION_WAITING_DOTS="true"
+
 # Comment this out to disable weekly auto-update checks
 # export DISABLE_AUTO_UPDATE="false"
 plugins=(git ruby gem brew)
