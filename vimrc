@@ -1,6 +1,29 @@
 filetype off 
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/nerdtree'
+Bundle 'msanders/snipmate.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'hallettj/jslint.vim'
+Bundle 'juvenn/mustache.vim'
+Bundle 'rstacruz/sparkup'
+Bundle 'godlygeek/tabular'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
+Bundle 'tsaleh/vim-supertab'
+Bundle 'tsaleh/vim-tcomment'
+Bundle 'tpope/vim-surround'
+Bundle 'gregsexton/gitv'
+Bundle 't9md/vim-chef'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'kchmck/vim-coffee-script'
+
+Bundle 'git://git.wincent.com/command-t.git'
 
 set nocompatible " vi compatibility is for losers
 set background=dark " dark is good
