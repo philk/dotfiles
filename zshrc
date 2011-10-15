@@ -79,14 +79,6 @@ if [ -s ~/.rvm/scripts/rvm ] ; then
   RPS1="$RPS1 \$(rvm-prompt)"
 fi
 
-# z
-if (( $+commands[brew] )) ; then
-  . `brew --prefix`/etc/profile.d/z.sh
-  function precmd () {
-    z --add "$(pwd -P)";
-    title $ZSH_THEME_TERM_TAB_TITLE_IDLE $ZSH_THEME_TERM_TITLE_IDLE;
-  }
-fi
 function jc {
   jmx_host=$1
   jmx_port=${2:-8080}
