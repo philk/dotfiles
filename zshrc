@@ -59,6 +59,7 @@ alias ql="qlmanage -p 2>/dev/null" # preview a file using QuickLook
 getip() {
   dig +short $1 | pbcopy
 }
+alias filesum="ls -lh $@; ls -l $@ | awk '{ SUM += \$5} END { print SUM/1024/1024/1024 }'"
 
 # Chef Aliases
 alias kcu="knife cookbook upload $1"
