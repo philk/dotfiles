@@ -3,3 +3,4 @@ vim/backup
 vim/view/
 vim/tmp/
 vim/spell/
+vim/bundle/*
