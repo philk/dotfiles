@@ -15,13 +15,14 @@ Bundle 'rstacruz/sparkup'
 Bundle 'godlygeek/tabular'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
-Bundle 'tsaleh/vim-tcomment'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-surround'
 Bundle 'gregsexton/gitv'
 Bundle 't9md/vim-chef'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'mutewinter/LustyJuggler'
+Bundle 'tpope/vim-commentary'
 
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -185,11 +186,6 @@ if exists(":Tabularize")
   vmap <Leader>a= :Tabularize /=<CR>
   nmap <Leader>a: :Tabularize /:\zs<CR>
   vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
-
-" TComment
-if exists(":TComment")
-  vmap # :TComment<CR>
 endif
 
 " Ruby Debugger
