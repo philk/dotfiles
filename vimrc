@@ -23,6 +23,8 @@ Bundle 't9md/vim-chef'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
 
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 Bundle 'git://git.wincent.com/command-t.git'
 
 set nocompatible " vi compatibility is for losers
@@ -207,3 +209,8 @@ function! s:SetupChef()
     nnoremap <buffer> <silent> <C-w><C-w>    :<C-u>ChefDoWhatIMean<CR>
     nnoremap <buffer> <silent> <C-w><C-f>    :<C-u>ChefDoWhatIMeanSplit<CR>
 endfunction
+
+" FuzzyFinder shortcuts
+nmap <leader>ff <ESC>:FufFile<CR>
+nmap <leader>fl <ESC>:FufLine<CR>
+nmap <leader>fb <ESC>:FufBuffer<CR>
