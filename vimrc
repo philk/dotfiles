@@ -24,6 +24,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'mutewinter/LustyJuggler'
 Bundle 'tpope/vim-commentary'
 Bundle 'scrooloose/syntastic'
+Bundle 'dickeytk/status.vim'
 
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -146,41 +147,6 @@ map ,n :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyo$', '\.pyc$', '\.svn[\//]$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 
-" Statusline setup
-set statusline=%f\ 
-set statusline+=%h%m%r%w
-set statusline+=[%{strlen(&ft)?&ft:'none'},
-set statusline+=%{strlen(&fenc)?&fenc:&enc},
-set statusline+=%{&fileformat}]
-set statusline+=%=
-set statusline+=%b,0x%-8B\ 
-set statusline+=%c,%l/
-set statusline+=%L\ %P
-" display a warning if &et is wrong, or we have mixed-indenting
-set statusline+=%#error#
-set statusline+=%{StatuslineTabWarning()}
-set statusline+=%*
-" Recalculate tab warning when idle and after save
-autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
-" return '[&et]' if &et is set wrong
-" return '[mixed-indenting]' if spaces and tabs are used to indent
-" return an empty string if everything is fine
-function! StatuslineTabWarning()
-  if !exists("b:statusline_tab_warning")
-    let tabs = search('^\t', 'nw') != 0
-    let spaces = search('^ ', 'nw') != 0
-
-    if tabs && spaces
-      let b:statusline_tab_warning =  '[mixed-indenting]'
-    elseif (spaces && !&et) || (tabs && &et)
-      let b:statusline_tab_warning = '[&et]'
-    else
-      let b:statusline_tab_warning = ''
-    endif
-  endif
-  return b:statusline_tab_warning
-endfunction
-
 " Tabularize
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
@@ -213,6 +179,28 @@ endfunction
 " Syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
+
+" Status.vim
+let g:statusline_fugitive=1
+let g:statusline_fullpath=0
+" Everything must be after Right Separator for BufStat
+let g:statusline_order=[
+      \ 'Filename',
+      \ 'Encoding',
+      \ 'Help',
+      \ 'Filetype',
+      \ 'Modified',
+      \ 'Fugitive',
+      \ 'RVM',
+      \ 'TabWarning',
+      \ 'Syntastic',
+      \ 'Paste',
+      \ 'ReadOnly',
+      \ 'RightSeperator',
+      \ 'CurrentHighlight',
+      \ 'CursorColumn',
+      \ 'LineAndTotal',
+      \ 'FilePercent']
 
 " FuzzyFinder shortcuts
 nmap <leader>ff <ESC>:FufFile<CR>
