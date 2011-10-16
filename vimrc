@@ -23,6 +23,7 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mutewinter/LustyJuggler'
 Bundle 'tpope/vim-commentary'
+Bundle 'scrooloose/syntastic'
 
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -208,6 +209,10 @@ function! s:SetupChef()
     nnoremap <buffer> <silent> <C-w><C-w>    :<C-u>ChefDoWhatIMean<CR>
     nnoremap <buffer> <silent> <C-w><C-f>    :<C-u>ChefDoWhatIMeanSplit<CR>
 endfunction
+
+" Syntastic
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
 
 " FuzzyFinder shortcuts
 nmap <leader>ff <ESC>:FufFile<CR>
