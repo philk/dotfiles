@@ -64,6 +64,9 @@ set cursorline " highlight cursor line
 set splitbelow splitright
 source ~/.vim/abbreviations
 
+" Use Node.js for JavaScript interpretation
+let $JS_CMD='node'
+
 " Setup for various TERM types
 if $TERM =~ '^xterm.*'
   set t_Co=256
