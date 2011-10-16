@@ -176,6 +176,11 @@ function! s:SetupChef()
     nnoremap <buffer> <silent> <C-w><C-f>    :<C-u>ChefDoWhatIMeanSplit<CR>
 endfunction
 
+" LustyJuggler
+nnoremap <leader>, :LustyJugglePrevious<CR>
+let g:LustyJugglerShowKeys=1 " Show numbers for Lusty Buffers
+let g:LustyJugglerSuppressRubyWarning=1
+
 " Syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
