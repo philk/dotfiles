@@ -62,6 +62,7 @@ set clipboard+=unnamed " Yank to go to clipboard
 set backup " enable backup files
 set backupdir=~/.vim/backup " Vim swp directory
 set directory=~/.vim/tmp " temp file directory
+set undodir=~/.vim/undo
 set autowrite " Writes on make/shell commands
 set showmatch " show matching brackets
 set mat=5 " matching blinky
