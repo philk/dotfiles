@@ -14,7 +14,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Comment this out to disable weekly auto-update checks
 # export DISABLE_AUTO_UPDATE="false"
-plugins=(git ruby gem brew osx)
+plugins=(git github node ruby gem brew osx knife)
 
 source $ZSH/oh-my-zsh.sh
 
