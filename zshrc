@@ -73,10 +73,11 @@ export GIT_EDITOR="mvim -f"
 export EDITOR="mvim -f"
 export PAGER=less
 
-# rvm-install added line:
-if [ -s ~/.rvm/scripts/rvm ] ; then
-  source ~/.rvm/scripts/rvm
-  RPS1="$RPS1 \$(rvm-prompt)"
+# rbenv setup
+if [ -s ~/.rbenv/bin/rbenv ] ; then
+  export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+  eval "$(rbenv init - zsh)"
+  export RPS1="$RPS1 \$(rbenv version-name)"
 fi
 
 function jc {
