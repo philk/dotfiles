@@ -71,6 +71,7 @@ set report=0 " show a report when N lines were changed.  0 means 'all'
 set ls=2 " always show status line
 set cursorline " highlight cursor line
 set splitbelow splitright
+set nofoldenable  "dont fold by default
 source ~/.vim/abbreviations
 
 " Use Node.js for JavaScript interpretation
