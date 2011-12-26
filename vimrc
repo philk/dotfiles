@@ -74,6 +74,14 @@ set splitbelow splitright
 set nofoldenable  "dont fold by default
 source ~/.vim/abbreviations
 
+" Show trailing whitespace or tag/space in blinding red
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufWinEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
+au BufWinLeave * call clearmatches()
+
 " Use Node.js for JavaScript interpretation
 let $JS_CMD='node'
 
