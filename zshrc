@@ -109,3 +109,14 @@ alias gpthis='git push origin HEAD:$(git_current_branch)'
 alias grb='git rebase -p'
 alias gup='git fetch origin && grb origin/$(git_current_branch)'
 alias gm='git merge --no-ff'
+alias gs='git status -sb'
+
+# Stolen from https://github.com/gf3/dotfiles/blob/master/.functions
+# Copy w/ progress
+cp_p () {
+  rsync -WavP --human-readable --progress $1 $2
+}
+# All the dig info, 'cause I can never remember it
+digga () {
+  dig +nocmd $1 any +multiline +noall +answer
+}
