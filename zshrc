@@ -24,7 +24,6 @@ setopt autocd                  # change to dirs without cd
 setopt promptcr                # ensure a new line before prompt is drawn
 setopt listpacked              # compact completion lists
 setopt notify                  # notify of BG job completion immediately
-setopt printexitvalue          # alert me if something's failed
 
 # Pathing
 PATH="/usr/local/share/python:${PATH}"
