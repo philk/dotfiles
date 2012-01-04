@@ -18,3 +18,6 @@ augroup END
 
 " JSON
 au! BufRead,BufNewFile *.json set filetype=json
+
+" Octopress
+au! BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,textile} set filetype=octopress
