@@ -33,6 +33,7 @@ Bundle 'dickeytk/status.vim'
 
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'JSON.vim'
 Bundle 'git://git.wincent.com/command-t.git'
 
 set nocompatible " vi compatibility is for losers
@@ -226,3 +227,14 @@ let g:statusline_order=[
 nmap <leader>ff <ESC>:FufFile<CR>
 nmap <leader>fl <ESC>:FufLine<CR>
 nmap <leader>fb <ESC>:FufBuffer<CR>
+
+" JSON.vim settings
+augroup json_autocmd
+  autocmd!
+  autocmd FileType json set autoindent
+  autocmd FileType json set formatoptions=tcq2l
+  autocmd FileType json set textwidth=78 shiftwidth=2
+  autocmd FileType json set softtabstop=2 tabstop=8
+  autocmd FileType json set expandtab
+  autocmd FileType json set foldmethod=syntax
+augroup END
