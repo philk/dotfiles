@@ -28,8 +28,8 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
 Bundle 'scrooloose/syntastic'
-Bundle 'dickeytk/status.vim'
 Bundle 'tangledhelix/vim-octopress'
+Bundle 'Lokaltog/vim-powerline'
 
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -201,32 +201,13 @@ let g:LustyJugglerSuppressRubyWarning=1
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
-" Status.vim
-let g:statusline_fugitive=1
-let g:statusline_fullpath=0
-" Everything must be after Right Separator for BufStat
-let g:statusline_order=[
-      \ 'Filename',
-      \ 'Encoding',
-      \ 'Help',
-      \ 'Filetype',
-      \ 'Modified',
-      \ 'Fugitive',
-      \ 'RVM',
-      \ 'TabWarning',
-      \ 'Syntastic',
-      \ 'Paste',
-      \ 'ReadOnly',
-      \ 'RightSeperator',
-      \ 'CurrentHighlight',
-      \ 'CursorColumn',
-      \ 'LineAndTotal',
-      \ 'FilePercent']
-
 " FuzzyFinder shortcuts
 nmap <leader>ff <ESC>:FufFile<CR>
 nmap <leader>fl <ESC>:FufLine<CR>
 nmap <leader>fb <ESC>:FufBuffer<CR>
+
+" Powerline
+let g:Powerline_symbols="fancy"
 
 " JSON.vim settings
 augroup json_autocmd
