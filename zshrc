@@ -85,6 +85,11 @@ if [ -s ~/.rbenv/bin/rbenv ] ; then
   export RPS1="$RPS1 \$(rbenv version-name)"
 fi
 
+. `brew --prefix`/etc/profile.d/z.sh
+function precmd() {
+  z --add "$(pwd -P)"
+}
+
 function jc {
   jmx_host=$1
   jmx_port=${2:-8080}
