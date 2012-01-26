@@ -40,14 +40,6 @@ export GOOS=darwin
 # Python
 export ARCHFLAGS="-arch i386 -arch x86_64"
 export PIP_USE_MIRRORS=true
-export WORKON_HOME=${HOME}/.venvs
-export PIP_VIRTUALENV_BASE=${WORKON_HOME}
-export PIP_RESPECT_VIRTUALENV=true
-if [ -f /usr/local/share/python/virtualenvwrapper.sh ]; then
-  source /usr/local/share/python/virtualenvwrapper.sh
-else
-  source /usr/local/bin/virtualenvwrapper.sh
-fi
 
 # Node
 export NODE_PATH="/usr/local/lib/node"
