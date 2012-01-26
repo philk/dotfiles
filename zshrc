@@ -27,10 +27,7 @@ setopt notify                  # notify of BG job completion immediately
 
 # Pathing
 PATH="/usr/local/share/python:${PATH}"
-PATH="${HOME}/bin:${PATH}"
-PATH="${HOME}/Source/depot_tools:${PATH}"
-PATH="${HOME}/.cabal/bin:${PATH}"
-PATH="/usr/local/share/npm/bin:${PATH}"
+PATH="${HOME}/bin:${HOME}/local/bin:${PATH}"
 PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
 export GNUPGHOME="${HOME}/.gnupg"
