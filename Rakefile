@@ -30,6 +30,9 @@ task :install do
       link_file(file)
     end
   end
+  %w{tmp backup undo}.each do |vimfolder|
+    Dir.mkdir(File.join(ENV['HOME'], ".vim", vimfolder))
+  end
 end
 
 def replace_file(file)
