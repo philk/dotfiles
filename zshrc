@@ -1,5 +1,4 @@
 # Path to your oh-my-zsh configuration.
-fpath=(/usr/local/share/zsh/functions)
 export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
