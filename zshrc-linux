@@ -3,3 +3,12 @@
 export EDITOR="vim"
 export PAGER="less"
 
+# TMUX
+if [[ -n ${+commands[tmux]} ]]; then
+  if [[ -z ${TMUX} ]]; then
+    tmux attach-session || tmux
+  fi
+else
+  echo 'No tmux! How Awful!'
+fi
+
