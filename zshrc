@@ -24,34 +24,12 @@ setopt promptcr                # ensure a new line before prompt is drawn
 setopt listpacked              # compact completion lists
 setopt notify                  # notify of BG job completion immediately
 
-# Pathing
-PATH="/usr/local/share/python:${PATH}"
-PATH="${HOME}/bin:${HOME}/local/bin:${PATH}"
-PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
-
+export PATH="${HOME}/bin:${HOME}/local/bin:${PATH}"
 export GNUPGHOME="${HOME}/.gnupg"
 
-# Go
-export GOROOT=`brew --prefix`/Cellar/go/HEAD
-export GOARCH=amd64
-export GOOS=darwin
-
-# Python
-export ARCHFLAGS="-arch i386 -arch x86_64"
-export PIP_USE_MIRRORS=true
-
-# Node
-export NODE_PATH="/usr/local/lib/node"
-
 # ALIAS
-alias vim="mvim"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias flush="dscacheutil -flushcache" # Flush DNS cache
-alias ql="qlmanage -p 2>/dev/null" # preview a file using QuickLook
-getip() {
-  dig +short $1 | pbcopy
-}
 alias filesum="ls -lh $@; ls -l $@ | awk '{ SUM += \$5} END { print SUM/1024/1024/1024 }'"
 
 # Chef Aliases
@@ -61,22 +39,12 @@ alias kcc="knife cookbook create $1"
 # Corrections fixes
 alias knife="nocorrect knife"
 
-# Program Setup
-export GIT_EDITOR="mvim -f"
-export EDITOR="mvim -f"
-export PAGER=less
-
 # rbenv setup
 if [ -s ~/.rbenv/bin/rbenv ] ; then
   export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
   eval "$(rbenv init - zsh)"
   export RPS1="$RPS1 \$(rbenv version-name)"
 fi
-
-. `brew --prefix`/etc/profile.d/z.sh
-function precmd() {
-  z --add "$(pwd -P)"
-}
 
 function jc {
   jmx_host=$1
@@ -117,3 +85,9 @@ cp_p () {
 digga () {
   dig +nocmd $1 any +multiline +noall +answer
 }
+
+if [[ $(uname) == 'Darwin' ]]; then
+  . ~/.zshrc-osx
+elif [[ $(uname) == 'Linux' ]]; then
+  . ~/.zshrc-linux
+fi

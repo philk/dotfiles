@@ -1,0 +1,5 @@
+
+# Program Setup
+export EDITOR="vim"
+export PAGER="less"
+
