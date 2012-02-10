@@ -90,14 +90,9 @@ au BufWinLeave * call clearmatches()
 let $JS_CMD='node'
 
 " Setup for various TERM types
-if $TERM =~ '^xterm.*'
+if $TERM =~ '^xterm.*' || $TERM == 'screen-256color'
   set t_Co=256
-  colorscheme moria
-elseif $TERM == 'linux'
-  set t_Co=16
-elseif $TERM == 'ansi'
-  set t_Co=16
-  colorscheme desert
+  colorscheme solarized
 else
   set t_Co=16
 endif
