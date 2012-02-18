@@ -38,6 +38,7 @@ alias kcc="knife cookbook create $1"
 
 # Corrections fixes
 alias knife="nocorrect knife"
+alias sudo="nocorrect sudo"
 
 # rbenv setup
 if [ -s ~/.rbenv/bin/rbenv ] ; then
